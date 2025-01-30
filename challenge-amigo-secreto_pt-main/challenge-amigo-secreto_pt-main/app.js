@@ -27,3 +27,14 @@ function adicionarAmigo() {
     }
     document.getElementById('amigo').value = '';
 }
+// Sorteando Amigos
+function sortandoAmigo() {
+    if (amigos.length === 0) {
+        alert('A lista de amigos está vazia. Adicione amigos antes de sortear!');
+        return;
+    }
+    let sorteado = amigos[Math.floor(Math.random() * amigos.length)];
+    document.getElementById('resultado').innerHTML = `O amigo sorteado foi: <strong>${sorteado}</strong>!`;
+    amigos = [];
+    atualizarListaAmigos();
+}
