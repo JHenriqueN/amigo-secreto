@@ -1,6 +1,6 @@
-// Lista de Amigos
+// Iniciando Amigo Screto
 let amigos = [];
-
+// Atualizando Lista do Amigo Secreto
 function atualizarListaAmigos() {
     let listaContainer = document.getElementById('listaAmigos');
     listaContainer.innerHTML = '';
@@ -10,25 +10,22 @@ function atualizarListaAmigos() {
         li.textContent = amigo;
         listaContainer.appendChild(li);
     });
-
 }
 // Adicionando Amigos
 function adicionarAmigo() {
-    let nome = document.getElementById('amigo').ariaValueMax.trim();
+    let nome = document.getElementById('amigo').value.trim();
     if (!nome) {
-        alert('Por favor, insira o nome dos amigos');
-
-    }else if (amigos.includes(nome)) {
+        alert('Por favor, insira o nome do amigo');
+    } else if (amigos.includes(nome)) {
         alert('Esse amigo já está na lista!');
-
-    }else {
+    } else {
         amigos.push(nome);
         atualizarListaAmigos();
     }
     document.getElementById('amigo').value = '';
 }
-// Sorteando Amigos
-function sortandoAmigo() {
+//Sorteado Amigos 
+function sortearAmigo() {
     if (amigos.length === 0) {
         alert('A lista de amigos está vazia. Adicione amigos antes de sortear!');
         return;
